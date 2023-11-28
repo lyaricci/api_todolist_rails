@@ -1,24 +1,43 @@
-# README
+# API Todolist Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple example of a todolist API created with Ruby on Rails.
 
-Things you may want to cover:
+## Endpoints
 
-* Ruby version
+> *All endpoints return JSON.*
 
-* System dependencies
+### GET /tasks
 
-* Configuration
+Returns a list of tasks.
 
-* Database creation
+### GET /tasks/:id
 
-* Database initialization
+Returns a task by its id.
 
-* How to run the test suite
+### GET /tasks/completed
 
-* Services (job queues, cache servers, search engines, etc.)
+Returns a list of tasks marked as completed.
 
-* Deployment instructions
+### GET /tasks/incomplete
 
-* ...
+Returns a list of tasks marked as incomplete.
+
+### POST /tasks
+
+Creates a new task. Parameters:
+
+- *required* `title` (string): The task title
+- *optional* `description` (string): The task description
+- *required* `completed` (boolean): Whether the task is completed or not
+
+### PATCH /tasks/:id
+
+Updates a task. Parameters:
+
+- *required* `title` (string): NEW task title
+- *optional* `description` (string): NEW task description
+- *required* `completed` (boolean): NEW task status
+
+### DELETE /tasks/:id
+
+Deletes a task.
